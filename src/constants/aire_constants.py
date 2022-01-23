@@ -42,3 +42,55 @@ estaciones_codes_dict = {
     58:'El Pardo',59:'Parque Juan Carlos I',60:'Tres Olivos',40:'Vallecas',35:'Pza. del Carmen',
     39:'Barrio del Pilar',38:'Cuatro Caminos',36:'Moratalaz',60:'Tres Olivos'
 }
+
+MADRID_AIR_QUALITY_ZONES = {
+    1 : [
+        "Pza. del Carmen",
+        "Pza. de España",
+        "Retiro",
+        "Parque del Retiro",
+        "Pº. Castellana",
+        "Castellana",
+    ],
+    2 : [
+        "Escuelas Aguirre",
+        "Barrio del Pilar",        
+        "Pza. Castilla",
+        "Plaza Castilla",
+        "Av. Ramón y Cajal",
+        "Avda. Ramón y Cajal",
+        "Cuatro Caminos"
+    ],
+    3 : [
+        "Mendez Alvaro",
+    ],
+    4: [
+        "Ensanche Vallecas",
+        "Ensanche de Vallecas",
+        "Moratalaz",
+        "Vallecas",
+    ],
+    5 : [
+        "Arturo Soria",
+        "Barajas",
+        "Urb. Embajada (Barajas)",
+        "Urb. Embajada",
+        "Barajas Pueblo",
+        "Tres Olivos",
+        "Parque Juan Carlos I",
+        "Juan Carlos I",
+        "Sanchinarro",
+    ],
+    6 : [
+        "Casa de Campo",
+        "El Pardo",
+    ],
+    7 : [
+        "Plaza Elíptica",
+        "Pza. Elíptica",
+        "Villaverde Alto",
+        "Villaverde",
+        "C/ Farolillo",
+        "Farolillo",
+    ],
+}

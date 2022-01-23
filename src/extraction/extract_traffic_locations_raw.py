@@ -54,4 +54,4 @@ def extract_traffic_locations_raw():
     pmed_ubicaciones_raw = pmed_ubicaciones_raw.astype(dict(x=float,y=float,st_x=float,st_y=float,year=int,tipo_elem=str))
     
     return pmed_ubicaciones_raw 
-    # pmed_ubicaciones_raw.to_feather('../01-data/raw/pmed_ubicaciones_raw.feather')
+    # pmed_ubicaciones_raw.to_feather('../01-data/interim/pmed_ubicaciones_raw.feather')

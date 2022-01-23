@@ -40,6 +40,8 @@ def clean_traffic_locations_raw(pmed_ubicaciones_raw:DataFrame) -> DataFrame:
     #Eliminar columnas que usan coordenadas utm
     pmed_ubicaciones = pmed_ubicaciones.drop(columns=['utm_x','utm_y','x','y','coord_x','coord_y','st_x','st_y','geom'])
     
+    pmed_ubicaciones["cod_cent"] = pmed_ubicaciones["cod_cent"].fillna(pmed_ubicaciones["nombre"])
+
     #Eliminar NaNs y columnas irrelevantes y asignar datatypes adecuados:
     pmed_ubicaciones = (
         pmed_ubicaciones

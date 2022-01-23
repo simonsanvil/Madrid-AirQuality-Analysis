@@ -13,5 +13,10 @@ prophet
 termcolor
 fastprogress
 python-dotenv
+simpledbf
+pyproj
 #Custom libraries
 git+https://github.com/simonsanvil/pyhandy.git
+
+# local module
+-e .

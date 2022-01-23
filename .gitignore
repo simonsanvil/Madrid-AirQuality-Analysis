@@ -77,6 +77,10 @@ target/
 
 # exclude data from source control by default
 /data/
+*.feather
+01-data/
+00-rawdata/
+cache/
 
 # Mac OS-specific storage files
 .DS_Store
@@ -87,3 +91,16 @@ target/
 
 # Mypy cache
 .mypy_cache/
+cache/
+*cache/
+
+# Virtualenv
+.venv/
+venv/
+
+# Data
+*.csv
+*.xlsx
+Distritos/
+models/
+Untitled*

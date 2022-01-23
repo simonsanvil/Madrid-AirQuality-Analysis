@@ -8,7 +8,7 @@ We base our analysis and conclusions on statistical insights gathered from machi
 Authors:
 --------
 
-- [Simon E. Sanchez Viloria]()
+- [Simon E. Sanchez Viloria](https://github.com/simonsanvil)
 - [Ines Olmos Alonzo]()
 - [Francisco Javier Icaza Navarro]()
 - [Paloma Sahelices Soto]()
@@ -56,14 +56,14 @@ If you are interested in reproducing the results of our analysis, you can follow
 3. Take a look and execute the jupyter notebooks in the `notebooks` folder in the given order.
 4. Run the streamlit app in the `dashboard` folder to see the results of the analysis.
 
-Contact us or create an issue in this repo if you have any questions or comments.
+Contact us or create an issue in this repository if you have any questions or comments.
 
 Acknowledgements:
 -----
 
-This work was made as part of our course for the *Data Science Project* of the Bachelors of Data Science and Engineering degree at the University Charles III of Madrid. Our work was supervised by professor Harold Molina-Bulla Ph.D and the course was supervised by professor Fernando Diaz de María Ph.D. 
+This work was made as part of our course for the *Data Science Project* of the Bachelors of Data Science and Engineering degree at the University Carlos III de Madrid. Our work was supervised by professor Harold Molina-Bulla Ph.D and the course was supervised by professor Fernando Diaz de María Ph.D. 
 
-This work was as part of a cooperation between the university/students and the Madrid city town-hall. Special aknowlegements to Honorio Enrique Crespo Díaz Alejo, Francisco José López Carmona, and David Garcia Falin from Ayuntamiento de Madrid for their support.
+This work was as part of a cooperation between the university/students and the Madrid city town-hall (Ayuntamiento de Madrid). Special aknowlegements to Honorio Enrique Crespo Díaz Alejo, Francisco José López Carmona, and David Garcia Falin from Ayuntamiento de Madrid for their support throughout our work.
 
 References
 --------
