@@ -32,8 +32,8 @@ def make_countoured_map_of_concentrations(
         Dataframe with the data of the pollution in Madrid
     indicator : str
         Name of the pollutant to plot the concentration of
-    geo_df : pandas.DataFrame
-        Dataframe with the geometry of the map. If None, the map of Madrid is queried from OSM
+    geo_df : geopandas.DataFrame
+        Geopandas Dataframe with the geometry of the map. If None, the map of Madrid is queried from OSM
     n_points : int
         Number of points to interpolate the data
     title : str

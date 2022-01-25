@@ -50,7 +50,7 @@ def train_prophet_model(
     verbose : bool, optional
         If True, prints info about the training process.
     **kwargs : dict
-        Keyword arguments to be passed to the Prophet model.
+        Keyword arguments to be passed to the instance of the Prophet model.
     
     Returns
     -------
@@ -94,13 +94,18 @@ def train_prophet_model(
         eval_end = pd.to_datetime(eval_start) + eval_end
     
      # Prepare the data for the prophet model
-    X = madrid_df.rename(
+    X = madrid_df.set_index(
+        "time"
+    ).resample(
+        "1D"
+    ).mean().reset_index().rename(
         columns={"time":"ds",y:"y"}
     ).drop(
         columns=madrid_df.columns.intersection(["zone","zona","estacion","location"])
     ).copy()
-    X["y"] = X["y"].interpolate(limit=6)
-    X = X.dropna(subset=["y"])
+    X = X[["ds","y"] + ([r for r in regressors] if regressors is not None else [])]
+    X = X.set_index("ds").interpolate(limit=6).dropna().reset_index()
+    # X = X.dropna(subset=["y"])
     
     # Train and evaluation split
     X_train = X[(X.ds<eval_start)&(X.ds>=train_start)].copy()
@@ -130,9 +135,13 @@ def train_prophet_model(
     diff = np.mean((Y_hat.yhat.values - X_test.y.values)/Y_hat.yhat.values)
 
     # Evaluate the trend
-    real_trend = sm.tsa.seasonal_decompose(X.set_index("ds")['y'], model='additive').trend
-    predicted_trend = sm.tsa.seasonal_decompose(forecast.set_index("ds")['yhat'], model='additive').trend
-    trend_diff = np.mean((predicted_trend - real_trend)/predicted_trend)
+    try:
+        real_trend = sm.tsa.seasonal_decompose(X.set_index("ds")['y'], model='additive').trend
+        predicted_trend = sm.tsa.seasonal_decompose(forecast.set_index("ds")['yhat'], model='additive').trend
+        trend_diff = np.mean((predicted_trend - real_trend)/predicted_trend)
+    except Exception as err:
+        logger.warning(f"Could not evaluate the trend: {err}")
+        trend_diff = np.nan
 
     logger.info(f"Evaluation complete. MSE={mse:.2f}, MAE={mae:.2f}, R2={r2:.2f}")
     logger.info(f"Mean difference between forecast and actual: {diff:+.2f}")
@@ -204,10 +213,14 @@ def train_clasp_model(
     ClaSPResults = namedtuple('ClaSPResults',['model','ts_df','changepoints_df'])
     if not verbose:
         logger.setLevel(logging.ERROR)
+    if train_start is None:
+        train_start = madrid_df.time.min()
+    if train_end is None:
+        train_end = madrid_df.time.max()
     # Make time series dataframe for ClaSPSegmentation
     df = madrid_df.copy().set_index(
-        ["zone","time"]
-    ).groupby([pd.Grouper(level='zone'), 
+        [location_by,"time"]
+    ).groupby([pd.Grouper(level=location_by), 
                 pd.Grouper(level='time', freq='1D')]
     ).mean().reset_index()
     # Convert to time series dataframe

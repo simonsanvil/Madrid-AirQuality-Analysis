@@ -84,7 +84,7 @@ def visualize_prophet_results(
     # Plot the actual and predicted values with confidence intervals
     if start!=model_results.eval_df.ds.min():
         ax.axvline(x=model_results.eval_df.ds.min(),color="green",label="Start of test period",alpha=.6,zorder=1)
-    ax.plot(forecast.ds,forecast.yhat,color="royalblue",label=f"Forecast (r2={r2:.2f})",zorder=4)
+    ax.plot(forecast.ds,forecast.yhat,color="royalblue",label=f"Forecast (r2={r2:.2f})",zorder=6)
     ax.fill_between(
         forecast.ds,forecast.yhat_lower,forecast.yhat_upper,
         color="cornflowerblue",
@@ -95,8 +95,8 @@ def visualize_prophet_results(
 
     real_trend = sm.tsa.seasonal_decompose(X.set_index("ds")['y'], model='additive').trend
     predicted_trend = sm.tsa.seasonal_decompose(forecast.set_index("ds")['yhat'], model='additive').trend
-    ax.plot(X.ds,real_trend,color="black",label="Real Trend")
-    ax.plot(forecast.ds,predicted_trend,color="red",label="Predicted Trend")
+    ax.plot(X.ds,real_trend,color="black",label="Real Trend",zorder=5)
+    ax.plot(forecast.ds,predicted_trend,color="red",label="Predicted Trend",zorder=4)
     ax.legend(loc="upper right",ncol=2)
     if with_changepoints:
         # Plot the significant changepoints and trend
@@ -123,11 +123,7 @@ def visualize_prophet_results(
                 textcoords='offset points',
                 arrowprops=arrowprops,
                 rotation=90, va='top', ha='center', annotation_clip=False
-            ) 
-    # else:
-    #     #plot trend
-    #     ax.plot(forecast.ds,forecast.trend,color="red",label="trend",alpha=0.5)
-    #     ax.legend(loc="upper left",ncol=2)
+            )
 
     ax.set_title(ax_titles[-1])  
     fig.tight_layout()

@@ -2,6 +2,7 @@ import re
 import numpy as np
 import pandas as pd
 from src.constants import MADRID_AIR_QUALITY_ZONES
+import statsmodels.api as sm
 
 zones_stations_dict = {
     estacion : zone
@@ -27,3 +28,29 @@ def group_df_by_zone(madrid_df):
                 pd.Grouper(level='time', freq='1D')]
     ).mean().reset_index()
     return df
+
+def get_trend_difference(real,pred,model="additive"):
+    """
+    Compute the trend between real and predicted signal and calculate the 
+    mean percentage deviation between the predicted trend and the real trend.
+
+    % trend difference = 100*AVG{ (predicted_trend - real_trend)/predicted_trend }
+
+    Parameters
+    ----------
+    real : pandas.Series or np.array
+        Real signal.
+    pred : pandas.Series or np.array
+        Predicted/Forecasted signal.
+    model : str, optional (default="additive")
+        Seasonal model to be used.
+    
+    Returns
+    -------
+    float
+        Percentage of deviation between the predicted trend and the real trend.
+    """
+    real_trend = sm.tsa.seasonal_decompose(real, model=model).trend
+    predicted_trend = sm.tsa.seasonal_decompose(pred, model=model).trend
+    trend_diff = np.mean((predicted_trend - real_trend)/predicted_trend)
+    return trend_diff*100
