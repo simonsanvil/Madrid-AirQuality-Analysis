@@ -9,9 +9,9 @@ Authors:
 --------
 
 - [Simon E. Sanchez Viloria](https://github.com/simonsanvil)
-- [Ines Olmos Alonzo]()
-- [Francisco Javier Icaza Navarro]()
-- [Paloma Sahelices Soto]()
+- Ines Olmos Alonzo
+- Francisco Javier Icaza Navarro
+- Paloma Sahelices Soto
 
 Data Sources
 -------------
