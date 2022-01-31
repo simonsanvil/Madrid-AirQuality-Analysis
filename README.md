@@ -1,22 +1,15 @@
 Air quality in the City of Madrid
 ===============================
 
-Analysis of air-quality in the City of Madrid. We study the factors that influence the concentration of pollutants in the air and the effects that certain social or administrative actions can have on the air quality.
+Analysis of air-quality in the City of Madrid. A study the factors that influence the concentration of pollutants in the air and the effects that certain social or administrative actions can have on the air quality.
 
-We base our analysis and conclusions on statistical insights gathered from machine-learning models that have been trained with data collected from multiple monitoring stations located in the City of Madrid on a period of 7 years from 2014 to 2021.
+The analysis here is based on statistical insights gathered from machine-learning models that have been trained with data collected from multiple monitoring stations located in the City of Madrid on a period of 7 years from 2014 to 2021.
 
-Authors:
---------
-
-- [Simon E. Sanchez Viloria](https://github.com/simonsanvil)
-- Ines Olmos Alonzo
-- Francisco Javier Icaza Navarro
-- Paloma Sahelices Soto
 
 Data Sources
 -------------
 
-Various data sources were used throughout our analysis. Most of the city-level data was obtained from the [Portal de Datos Abiertos](https://datos.madrid.es/portal) del Ayuntamiento de Madrid. 
+Various data sources were used throughout this analysis. Most of the city-level data was obtained from the [Portal de Datos Abiertos](https://datos.madrid.es/portal) del Ayuntamiento de Madrid. 
 
 The following datasets were built to carry out most of the analysis:
 
@@ -30,26 +23,20 @@ The following datasets were built to carry out most of the analysis:
 - **Demographics data**: the population data were obtained from the [Portal de Datos Abiertos](https://datos.madrid.es/portal) of the City of Madrid. Contains the population of the city from 2014 to 2021.
 
 
-Full Report
-------------------------
-
-We wrote a comprehensive report of the methodology and results of our analysis. This report is available in pdf format in [here](). 
-
-
 Reproducibility
 -----------
 
-If you are interested in reproducing the results of our analysis, you can follow the steps below:
+If you are interested in reproducing the results of this analysis, you can follow the steps below:
 
-1. Clone the [GitHub repository]()
-2. Extract the data used in our analysis from the Portal de Datos Abiertos. The `references` folder contains information about where to obtain the raw data from there.
-3. Take a look and execute the jupyter notebooks in the `notebooks` folder in the given order to reassess our analysis.
+1. Clone this [GitHub repository]()
+2. Extract the data used in the analysis from the Portal de Datos Abiertos. The `references` folder contains information about where to obtain the raw data from there.
+3. Take a look and execute the jupyter notebooks in the `notebooks` folder in the given order to reassess the analysis.
 
-Contact us or create an issue in this repository if you have any questions or comments.
+Contact me or create an issue in this repository if you have any questions or comments.
 
 Acknowledgements:
 -----
 
-This work was made as part of our course for the *Data Science Project* of the Bachelors of Data Science and Engineering degree at the University Carlos III de Madrid. Our work was supervised by professor Harold Molina-Bulla Ph.D and the course was supervised by professor Fernando Diaz de María Ph.D. 
+This work was made as part of my course work for the *Data Science Project* subject of the Bachelors of Data Science and Engineering degree at the University Carlos III de Madrid. This work was supervised by professor Harold Molina-Bulla Ph.D and the course was supervised by professor Fernando Diaz de María Ph.D. 
 
-This work was as part of a cooperation between the university/students and the Madrid city town-hall (Ayuntamiento de Madrid). Special aknowlegements to Honorio Enrique Crespo Díaz Alejo, Francisco José López Carmona, and David Garcia Falin from Ayuntamiento de Madrid for their support throughout our work.
+This project was as part of a cooperation between the university and the Madrid city town-hall (Ayuntamiento de Madrid). Special aknowlegements to Honorio Enrique Crespo Díaz Alejo, Francisco José López Carmona, and David Garcia Falin from Ayuntamiento de Madrid for their support throughout this project.
