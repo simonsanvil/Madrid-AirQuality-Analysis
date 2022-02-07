@@ -54,10 +54,6 @@ For this analysis I make use of [Prophet](https://github.com/facebook/prophet) (
 |:--:|  :--: |
 | Example of using ClaSP on the meteorologically-normalized series of NO2 concentrations. The first changepoint can be attributed to Madrid Central, the second and third to the COVID-19 pandemic | Example of performing forecast and trend analysis with Prophet on the time-series of pollutant concentrations after a certain changepoint (The Covid-19 Lockdown). The real trend was about 18% lower than the one estimated if the changepoint had not ocurred   |
 
-Data Pipeline
--------------
-
-#TODO
 
 Reproducibility
 -----------
