@@ -1,7 +1,7 @@
 Air quality in the City of Madrid
 ===============================
 
-Analysis of air-quality in the City of Madrid. A study the anthropogenic (human) factors that influence the concentration of pollutants in the air and the effects that historical administrative actions have had on the air quality.
+Analysis of air-quality in the City of Madrid. A study of the anthropogenic factors that influence the concentration of pollutants in the air and the effects that historical administrative actions have had on the air quality.
 
 The analysis here is based on statistical insights gathered from machine-learning models that have been trained with data collected from multiple monitoring stations located in the City of Madrid on a period of 7 years from 2014 to 2021.
 
